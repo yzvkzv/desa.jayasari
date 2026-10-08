@@ -1,0 +1,21 @@
+:root {
+  --primary: #1b5e20;
+  --secondary: #2e7d32;
+  --accent: #ffb300;
+  --bg-light: #f4f6f5;
+  --text-dark: #333333;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80'); background-size: cover; color: white; padding: 40px 20px; text-align: center; }
+nav { background: var(--primary); display: flex; justify-content: center; padding: 10px; gap: 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+nav a { color: white; text-decoration: none; font-weight: 600; padding: 5px 10px; border-radius: 4px; transition: 0.3s; }
+nav a:hover { background: var(--secondary); }
+.container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+.card { background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+h2 { color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid var(--bg-light); padding-bottom: 8px; }
+.btn { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
+.btn:hover { background: var(--secondary); }
+input, textarea, select { width: 100%; padding: 10px; margin: 8px 0 15px 0; border: 1px solid #ccc; border-radius: 4px; }
+footer { background: var(--primary); color: white; text-align: center; padding: 20px; margin-top: 40px; }
+.news-item { border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 15px; }
