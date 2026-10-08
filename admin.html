@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin - Desa Jayasari</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" target="_blank">Lihat Website</a>
+    <a href="#" onclick="logoutAdmin()" style="background: #c62828;">Logout</a>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h2>Tambah Berita / Pengumuman Baru</h2>
+      <label>Judul Berita:</label>
+      <input type="text" id="judul_berita" placeholder="Misal: Kegiatan Gotong Royong Dusun...">
+      <label>Kategori:</label>
+      <input type="text" id="kategori_berita" placeholder="Misal: Pengumuman / Kegiatan">
+      <label>Isi Berita:</label>
+      <textarea id="isi_berita" rows="5" placeholder="Tulis isi berita lengkap di sini..."></textarea>
+      <button type="button" class="btn" onclick="tambahBerita()">Publish Berita</button>
+    </div>
+
+    <div class="card">
+      <h2>Daftar Pengaduan Masuk dari Warga</h2>
+      <div id="list-aduan">Memuat data aduan...</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    window.onload = () => { cekSesiAdmin(); muatAduanAdmin(); };
+  </script>
+</body>
+</html>
