@@ -25,7 +25,7 @@ async function kirimAduan() {
   }
 }
 
-// 2. TAMPILKAN BERITA DI HALAMAN UTAMA (PUBLIK)
+// 2. TAMPILKAN BERITA DI HALAMAN UTAMA (DENGAN FOTO)
 async function muatBeritaPublik() {
   const container = document.getElementById('list-berita');
   if(!container) return;
@@ -45,6 +45,7 @@ async function muatBeritaPublik() {
     <div class="news-item">
       <small style="color: #666;">Kategori: ${item.kategori}</small>
       <h3 style="color: var(--primary); margin: 5px 0;">${item.judul}</h3>
+      ${item.foto_url ? `<img src="${item.foto_url}" alt="Foto Berita" class="news-img">` : ''}
       <p>${item.isi}</p>
     </div>
   `).join('');
@@ -79,24 +80,26 @@ async function logoutAdmin() {
   window.location.href = 'index.html';
 }
 
-// 6. TAMBAH BERITA OLEH ADMIN
+// 6. TAMBAH BERITA OLEH ADMIN (DENGAN FOTO)
 async function tambahBerita() {
   const judul = document.getElementById('judul_berita').value;
   const kategori = document.getElementById('kategori_berita').value;
+  const foto_url = document.getElementById('foto_berita').value;
   const isi = document.getElementById('isi_berita').value;
 
   if(!judul || !kategori || !isi) {
-    alert('Semua kolom berita wajib diisi!');
+    alert('Judul, kategori, dan isi berita wajib diisi!');
     return;
   }
 
-  const { error } = await db.from('berita').insert([{ judul, kategori, isi }]);
+  const { error } = await db.from('berita').insert([{ judul, kategori, foto_url, isi }]);
   if(error) {
     alert('Gagal menambah berita: ' + error.message);
   } else {
     alert('Berita berhasil dipublish!');
     document.getElementById('judul_berita').value = '';
     document.getElementById('kategori_berita').value = '';
+    document.getElementById('foto_berita').value = '';
     document.getElementById('isi_berita').value = '';
     muatAduanAdmin();
   }
@@ -126,3 +129,4 @@ async function muatAduanAdmin() {
     </div>
   `).join('');
 }
+  
