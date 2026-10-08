@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Resmi Desa Jayasari - Pangandaran</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Desa Jayasari</h1>
+    <p>Kecamatan Langkaplancar, Kabupaten Pangandaran</p>
+  </header>
+
+  <nav>
+    <a href="#profil">Profil</a>
+    <a href="#berita">Berita Desa</a>
+    <a href="#aduan">Layanan & Aduan</a>
+    <a href="login.html" style="background: var(--accent); color: black;">Login Admin</a>
+  </nav>
+
+  <div class="container">
+    <section id="profil" class="card">
+      <h2>Profil & Visi Misi Desa Jayasari</h2>
+      <p><strong>Sejarah Singkat:</strong> Desa Jayasari adalah salah satu desa di Kecamatan Langkaplancar, Kabupaten Pangandaran, yang dikenal dengan keindahan alam pegunungan, potensi pertanian, serta keaktifan masyarakatnya dalam membangun gotong royong.</p>
+      <br>
+      <p><strong>Visi:</strong> "Terwujudnya Desa Jayasari yang Maju, Sejahtera, Agamis, dan Transparan dalam Pelayanan Publik."</p>
+    </section>
+
+    <section id="berita" class="card">
+      <h2>Berita & Pengumuman Terbaru</h2>
+      <div id="list-berita">Memuat berita...</div>
+    </section>
+
+    <section id="aduan" class="card">
+      <h2>Layanan Pengaduan Warga</h2>
+      <p>Punya keluhan atau aspirasi untuk kemajuan Desa Jayasari? Sampaikan di sini (hanya bisa dibaca oleh Admin Desa).</p>
+      <form id="form-aduan">
+        <label>Nama Lengkap:</label>
+        <input type="text" id="nama_warga" required placeholder="Masukkan nama Anda">
+        <label>Nomor WhatsApp / HP:</label>
+        <input type="text" id="telepon" required placeholder="Contoh: 08123456789">
+        <label>Isi Pengaduan / Aspirasi:</label>
+        <textarea id="isi_aduan" rows="4" required placeholder="Tuliskan pengaduan atau saran..."></textarea>
+        <button type="button" class="btn" onclick="kirimAduan()">Kirim Aduan</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Pemerintah Desa Jayasari - Langkaplancar - Pangandaran</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    window.onload = () => { muatBeritaPublik(); };
+  </script>
+</body>
+  </html>
+  
