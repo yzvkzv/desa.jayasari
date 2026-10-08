@@ -7,7 +7,17 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80'); background-size: cover; color: white; padding: 40px 20px; text-align: center; }
+
+/* Header dengan foto Kantor Desa Jayasari */
+header { 
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('kantor-desa.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  color: white; 
+  padding: 50px 20px; 
+  text-align: center; 
+}
+
 nav { background: var(--primary); display: flex; justify-content: center; padding: 10px; gap: 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 nav a { color: white; text-decoration: none; font-weight: 600; padding: 5px 10px; border-radius: 4px; transition: 0.3s; }
 nav a:hover { background: var(--secondary); }
@@ -18,4 +28,5 @@ h2 { color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid var(--
 .btn:hover { background: var(--secondary); }
 input, textarea, select { width: 100%; padding: 10px; margin: 8px 0 15px 0; border: 1px solid #ccc; border-radius: 4px; }
 footer { background: var(--primary); color: white; text-align: center; padding: 20px; margin-top: 40px; }
-.news-item { border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 15px; }
+.news-item { border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+.news-img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 6px; margin: 10px 0; }
